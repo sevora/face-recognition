@@ -6,7 +6,8 @@ import imutils
 
 def main():
     if len(sys.argv) < 5:
-        print("Usage: python batch_capture.py [Label] [Count] [Directory] [IP Address of Camera Device]")
+        print("USAGE: python batch_capture.py [Label] [Count] [Directory] [IP Address of Camera Device]")
+        print("SAMPLE: python batch_capture.py ralph 1000 training http://192.168.100.156:8080/shot.jpg")
         return 1
     
     image_label = sys.argv[1]
