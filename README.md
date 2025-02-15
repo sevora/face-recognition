@@ -15,6 +15,8 @@ python scripts/batch_capture.py ralph 1000 training http://192.168.100.156:8080/
 
 This will use the IP Webcam at the specified address (assuming you use the IP Webcam application on Android), and it will save the files inside the `training` directory, with the label being the form of `ralph_1.jpg`, `ralph_2.jpg`, and so on until it reaches the limit of 1000.
 
+![Gathering Training Data GIF](/demo/gathering.gif)
+
 ## Training the Classifier
 Now in the root directory create a file called `labels.txt` inside it you can put values like so:
 ```txt
