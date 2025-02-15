@@ -5,7 +5,7 @@ import numpy
 def main():
     if len(sys.argv) < 4:
         print("USAGE: python train_lpbh.py [Directory] [Label Dictionary] [Save Path]")
-        print("SAMPLE: python train_lpbh.py training labels.txt model.yml")
+        print("SAMPLE: python scripts/train_lpbh.py training labels.txt model.yml")
         return 1
     
     train_directory = sys.argv[1]
@@ -33,6 +33,7 @@ def main():
     recognizer = cv2.face.LBPHFaceRecognizer_create()
     recognizer.train(faces, numpy.array(labels))
     recognizer.save(model_save_path)
+    print(f"Training successful, model saved at: {model_save_path}")
  
 if __name__ == "__main__":
     main()

@@ -8,7 +8,7 @@ import imutils
 def main():
     if len(sys.argv) < 4:
         print("USAGE: python recognize_faces.py [Model Directory] [Labels Dictionary] [IP Address of Camera Device]")
-        print("SAMPLE: python recognize_faces.py model.yml labels.txt http://192.168.100.156:8080/shot.jpg")
+        print("SAMPLE: python scripts/recognize_faces.py model.yml labels.txt http://192.168.100.156:8080/shot.jpg")
         return 1
     
     model_path = sys.argv[1]

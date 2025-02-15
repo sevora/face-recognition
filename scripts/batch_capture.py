@@ -7,7 +7,7 @@ import imutils
 def main():
     if len(sys.argv) < 5:
         print("USAGE: python batch_capture.py [Label] [Count] [Directory] [IP Address of Camera Device]")
-        print("SAMPLE: python batch_capture.py ralph 1000 training http://192.168.100.156:8080/shot.jpg")
+        print("SAMPLE: python scripts/batch_capture.py ralph 1000 training http://192.168.100.156:8080/shot.jpg")
         return 1
     
     image_label = sys.argv[1]
@@ -30,6 +30,7 @@ def main():
         for (x, y, w, h) in faces:
             if w > 250 and h > 250:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                cv2.putText(frame, f"{str(count)}/{str(image_limit)}", (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
                 cv2.imwrite(os.path.join(save_directory, f'{image_label}_{count}.jpg'), gray[y:y + h, x:x + w])
             count += 1
  
@@ -38,6 +39,7 @@ def main():
             break
  
         if count >= image_limit:
+            print("Image limit reached!")
             break
  
     cv2.destroyAllWindows()
