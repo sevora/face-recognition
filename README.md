@@ -10,10 +10,10 @@ Remember, that all commands moving forward assumes you're in the root directory 
 
 An example usage provided is, simply change the values accordingly:
 ```
-python scripts/batch_capture.py ralph 1000 training http://192.168.100.156:8080/shot.jpg
+python scripts/batch_capture.py ralph 250 training http://192.168.100.156:8080/shot.jpg
 ```
 
-This will use the IP Webcam at the specified address (assuming you use the IP Webcam application on Android), and it will save the files inside the `training` directory, with the label being the form of `ralph_1.jpg`, `ralph_2.jpg`, and so on until it reaches the limit of 1000.
+This will use the IP Webcam at the specified address (assuming you use the IP Webcam application on Android), and it will save the files inside the `training` directory, with the label being the form of `ralph_1.jpg`, `ralph_2.jpg`, and so on until it reaches the limit of 250.
 
 ![Gathering Training Data GIF](/demo/gathering.gif)
 
