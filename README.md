@@ -6,14 +6,14 @@ This is accomplished by Ralph Louis Gopez, Athaliah Palao, Kevin Ramos, and Migu
 Install the package requirements `pip install -r requirements.txt`. Ideally, use a virtual environment with `python -m venv venv` command and enter the virtual environment through its activation script.
 
 ## Getting Training Data 
-Remember, that all commands moving forward assumes you're in the root directory of the project. To get training data use the `batch_capture.py` script which will use an IP camera and save images of the faces found in the screen. 
+Remember, that all commands moving forward assumes you're in the root directory of the project. To get training data use the `batch_capture.py` script which will use an IP Webcam and save images of the faces found in the screen. 
 
 An example usage provided is, simply change the values accordingly:
 ```
-python script/batch_capture.py ralph 1000 training http://192.168.100.156:8080/shot.jpg
+python scripts/batch_capture.py ralph 1000 training http://192.168.100.156:8080/shot.jpg
 ```
 
-This will use the IP Camera at the specified address (assuming you use the IP Camera application on Android), and it will save the files inside the `training` directory, with the label being the form of `ralph_1.jpg`, `ralph_2.jpg`, and so on until it reaches the limit of 1000.
+This will use the IP Webcam at the specified address (assuming you use the IP Webcam application on Android), and it will save the files inside the `training` directory, with the label being the form of `ralph_1.jpg`, `ralph_2.jpg`, and so on until it reaches the limit of 1000.
 
 ## Training the Classifier
 Now in the root directory create a file called `labels.txt` inside it you can put values like so:
