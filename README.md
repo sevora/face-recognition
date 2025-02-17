@@ -27,9 +27,9 @@ Now in the root directory create a file called `labels.txt` inside it you can pu
 ```
 We need to do this as the model can only output numerical values, so we essentially define a dictionary through the `labels.txt` file which it will use as a reference. Now images for training such as `ralph_1.jpg` will be matched with the `ralph` and predicted as label `1`.
 
-We then run `train_lpbh.py`. An example usage is:
+We then run `train_lbph.py`. An example usage is:
 ```
-python scripts/train_lpbh.py training labels.txt model.yml
+python scripts/train_lbph.py training labels.txt model.yml
 ```
 
 Which will use the `training` directory we created earlier with the images we captured, use the `labels.txt` as a dictionary and finally save our model as `model.yml`. Remember, you can change the arguments as needed.

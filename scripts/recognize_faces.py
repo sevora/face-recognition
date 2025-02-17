@@ -4,7 +4,7 @@ import cv2
 import numpy as np 
 import imutils 
 
-# This is used to run the Haar Cascade + LPBH model to recognize faces.
+# This is used to run the Haar Cascade + LBPH model to recognize faces.
 # Instead of changing the variables via code, system arguments are used so that
 # those values could be changed when executing this script from the terminal.
 def main():
@@ -34,16 +34,11 @@ def main():
         array = np.array(bytearray(response.content), dtype=np.uint8) 
         frame = imutils.resize(cv2.imdecode(array, -1), width=1000, height=1800) 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-        # Detect faces in the grayscale frame
         faces = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
-        # Iterate over each detected face
         for (x, y, w, h) in faces:
-            # Draw a rectangle around the face
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
             
-            # Recognize the face
             label, confidence = face_recognizer.predict(gray[y:y+h, x:x+w])
             name = "Unknown Face"
 
@@ -53,8 +48,7 @@ def main():
             cv2.putText(frame, name, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
         cv2.imshow("Android_Camera", frame) 
-
-        # Press Esc key to exit 
+        
         if cv2.waitKey(1) == 27: 
             break
 
