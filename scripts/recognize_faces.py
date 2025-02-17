@@ -42,7 +42,7 @@ def main():
             label, confidence = face_recognizer.predict(gray[y:y+h, x:x+w])
             name = "Unknown Face"
 
-            if confidence < 100:
+            if confidence <= 80:
                 name = label_dictionary[str(label)]
 
             cv2.putText(frame, name, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
