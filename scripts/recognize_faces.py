@@ -24,7 +24,7 @@ def main():
 
     with open(labels_path, "r") as file:
         for line in file.readlines():
-            index, name = line.strip().split(",")
+            index, name = line.strip().lower().split(",")
             label_dictionary[index] = name
 
     while True: 

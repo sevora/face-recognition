@@ -18,12 +18,12 @@ def main():
 
     with open(labels_path, "r") as file:
         for line in file.readlines():
-            index, name = line.strip().split(",")
+            index, name = line.strip().lower().split(",")
             label_dictionary[name] = int(index)
      
     for file_name in os.listdir(train_directory):
         if file_name.endswith('.jpg'):
-            name = file_name.split('_')[0]
+            name = file_name.split('_')[0].lower()
             image = cv2.imread(os.path.join(train_directory, file_name))
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
