@@ -34,11 +34,15 @@ python scripts/train_lbph.py training labels.txt model.yml
 
 Which will use the `training` directory we created earlier with the images we captured, use the `labels.txt` as a dictionary and finally save our model as `model.yml`. Remember, you can change the arguments as needed.
 
+![Training the Model GIF](/demo/training.gif)
+
 ## Using the Classifier
 Now to use the classifier in real time, we just have to provide it with the model, the labels, and the IP address of the camera. Again an example usage assuming the previous steps were followed correctly:
 ```
 python scripts/recognize_faces.py model.yml labels.txt http://192.168.100.156:8080/shot.jpg
 ```
+
+![Result Image](/demo/result.png)
 
 ## How it works
 Programming object detection for a computer isn't as simple as it sounds for us humans that can do it intuitively. An object detection system requires drawing bounding boxes across the entire screen with varying sizes and tries to identify if something is within those boxes. Only then can it be classified. In real-time scenarios, that is a computationally expensive tasks when you consider the fact that all that has to run within at least 1/24th of a second.
