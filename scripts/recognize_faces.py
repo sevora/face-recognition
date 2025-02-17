@@ -1,10 +1,12 @@
-# Import essential libraries 
 import sys
 import requests 
 import cv2 
 import numpy as np 
 import imutils 
 
+# This is used to run the Haar Cascade + LPBH model to recognize faces.
+# Instead of changing the variables via code, system arguments are used so that
+# those values could be changed when executing this script from the terminal.
 def main():
     if len(sys.argv) < 4:
         print("USAGE: python recognize_faces.py [Model Directory] [Labels Dictionary] [IP Address of Camera Device]")

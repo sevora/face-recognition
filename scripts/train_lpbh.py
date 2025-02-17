@@ -2,6 +2,9 @@ import os, sys
 import cv2
 import numpy
 
+# This is used to train the LPBH model that specifically recognizes faces.
+# Instead of changing the variables via code, system arguments are used so that
+# those values could be changed when executing this script from the terminal.
 def main():
     if len(sys.argv) < 4:
         print("USAGE: python train_lpbh.py [Directory] [Label Dictionary] [Save Path]")

@@ -4,6 +4,9 @@ import cv2
 import numpy
 import imutils 
 
+# This is used to run the pre-existing Haar Cascade to gather training data from a camera.
+# Instead of changing the variables via code, system arguments are used so that
+# those values could be changed when executing this script from the terminal.
 def main():
     if len(sys.argv) < 5:
         print("USAGE: python batch_capture.py [Label] [Count] [Directory] [IP Address of Camera Device]")
