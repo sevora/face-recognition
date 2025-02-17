@@ -35,7 +35,7 @@ def main():
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 cv2.putText(frame, f"{str(count)}/{str(image_limit)}", (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
                 cv2.imwrite(os.path.join(save_directory, f'{image_label}_{count}.jpg'), gray[y:y + h, x:x + w])
-            count += 1
+                count += 1
  
         cv2.imshow('Capture Faces', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
